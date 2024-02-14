@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <users>
+        <user>
+            <id>1</id>
+            <name>Alice</name>
+            <email>alice@example.com</email>
+        </user>
+        <user>
+            <id>2</id>
+            <name>Bob</name>
+            <email>bob@example.com</email>
+        </user>
+        <user>
+            <id>3</id>
+            <name>Charlie</name>
+            <email>charlie@example.com</email>
+        </user>
+    </users>
+    <stories>
+        <story>
+            <id>101</id>
+            <title>Story 1</title>
+            <content>This is the content of Story 1.</content>
+        </story>
+        <story>
+            <id>102</id>
+            <title>Story 2</title>
+            <content>This is the content of Story 2.</content>
+        </story>
+    </stories>
+    <visitors>
+        <visitor>
+            <id>201</id>
+            <name>Visitor 1</name>
+        </visitor>
+        <visitor>
+            <id>202</id>
+            <name>Visitor 2</name>
+        </visitor>
+    </visitors>
+</data>
