@@ -46,7 +46,7 @@ if (isset($_POST["update"])) {
         $errors['content'] = 'Content is required';
     } else {
         $content = $_POST['content'];
-        // Adjust the regex as per your content validation rules
+        
     }
 
     // Update the story if no errors
