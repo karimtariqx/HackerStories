@@ -14,7 +14,7 @@ if (!isset($_SESSION["user_id"])) {
 if (isset($_GET['id'])) {
     $storyId = $_GET['id'];
 } else {
-    // 'id' parameter is not provided, you can handle this case as needed (e.g., redirect to an error page)
+  
     header("location: heheh.php");
     exit;
 }
@@ -30,20 +30,20 @@ if ($result) {
     mysqli_free_result($result);
 
 } else {
-    // Unable to fetch the story's author, handle this as needed
+    // Unable to fetch the story's author
     header("location: offf.php");
     exit;
 }
 
-// If the logged-in user is the author, proceed with story deletion
+// If the logged-in user is the author
 $sqlDelete = "DELETE FROM stories WHERE id = '$storyId'";
 
 if (mysqli_query($conn, $sqlDelete)) {
-    // Story deleted successfully, you can redirect to a success page or profile page
+    // Story deleted successfully
     header("location: profile.php?uid=$loggedInUserId");
     exit;
 } else {
-    // Error occurred while deleting the story, handle this as needed
+    // Error occurred while deleting the story
     header("location: lol.php");
     exit;
 }
