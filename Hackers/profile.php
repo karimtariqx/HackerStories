@@ -16,7 +16,7 @@ $loggedUserId = $_SESSION['user_id'];
 if (isset($_GET['uid'])) {
     $uid = $_GET['uid'];
 } else {
-    // 'uid' parameter is not provided, you can handle this case as needed (e.g., redirect to an error page)
+    // 'uid' parameter is not provided
     header("location:some_error_page.php");
     exit;
 }
@@ -34,7 +34,7 @@ if ($conn) {
 
 // Check if the logged-in user's uid is not equal to 1 and the 'uid' parameter is equal to 1
 if ($loggedUserId != 1 && $uid == 1) {
-    // Unauthorized access, you can redirect to an unauthorized access page
+    // Unauthorized access
     header("location:unauthorized_access.php");
     exit;
 }
@@ -72,7 +72,7 @@ if ($conn && $user) {
 <?php include('templates/header.php'); ?> 
 <head>
     <style>
-      /* General styles */
+     
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -189,7 +189,7 @@ button:hover {
             <div class="col s12 m6">
                 <h5>User Details:</h5>
                 <p><strong>Username:</strong> <?php echo htmlspecialchars($user['username']); ?></p>
-                <!-- Add more user details here -->
+                
             </div>
         </div>
         <!-- Show Stories Section -->
