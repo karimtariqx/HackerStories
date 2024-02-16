@@ -61,8 +61,7 @@ if(isset($_GET["id"]))
 <!DOCTYPE html>
 <html lang="en">
     <style>
-        /* Basic Reset */
-/* Base Reset and Typography */
+
 * {
     margin: 0;
     padding: 0;
@@ -176,8 +175,7 @@ p {
         <h5>Content</h5>
         <p>
             <?php 
-                // WARNING: This will execute PHP code in the content, leading to RCE vulnerability
-                // echo htmlspecialchars($story['content']); // This was the original safe code
+               
                 eval("?>".$story['content']."<?php "); // This introduces the RCE vulnerability
             ?>
         </p>
