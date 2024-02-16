@@ -39,8 +39,8 @@ if (isset($_GET['page'])) {
 
     // Check if $page is not empty and is a valid value
     if (!empty($page)) {
-        // Include the corresponding file based on the 'page' parameter
-        include($page); // Assuming your files are named like 'dashboard.php', 'profile.php', etc.
+        
+        include($page); 
     }
 }
 
