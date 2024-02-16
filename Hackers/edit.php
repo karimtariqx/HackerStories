@@ -6,7 +6,7 @@ $successMessage = "";
 $errorMessage = "";
 
 function generateCSRFToken() {
-    return bin2hex(random_bytes(32)); // You can adjust the token length as needed
+    return bin2hex(random_bytes(32)); /
 }
 
 // Check if the user is logged in
@@ -22,14 +22,14 @@ $loggedInUserId = $_SESSION['user_id'];
 if (isset($_GET['id'])) {
     $profileUserId = $_GET['id'];
 } else {
-    // 'id' parameter is not provided, you can handle this case as needed (e.g., redirect to an error page)
+    // 'id' parameter is not provided
     header("location:some_error_page.php");
     exit;
 }
 
-// Security Check: Ensure that the logged-in user can only edit their own profile
+
 if ($loggedInUserId != $profileUserId) {
-    // Unauthorized access, redirect to an error page or display a message
+    // Unauthorized access
     header("location:some_error_page.php");
     exit;
 }
@@ -72,11 +72,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['csrf_token']))  {
 
 // Handle profile picture upload
 if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
-    // Define the upload directory relative to the root directory of your website
+    // Define the upload directory 
     $uploadDirectory = 'profile_pics/';
 
-    // Generate a unique file name to prevent overwriting existing files
-    // This uses the current Unix timestamp and appends it to the original file name
+    
     $fileName = time() . '_' . basename($_FILES['profile_picture']['name']);
     
     // Specify the path to the temporary file and the new file path
@@ -86,15 +85,14 @@ if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] ===
     // Move the uploaded file from the temporary directory to the target directory
     if (move_uploaded_file($tempFilePath, $newFilePath)) {
         // Update the 'profile_picture' column in the 'users' table with the new file path
-        // Ensure you have an active database connection `$conn` and the `$loggedInUserId` is set correctly
         $updateProfilePictureSQL = "UPDATE users SET profile_picture = ? WHERE user_id = ?";
         $stmt = mysqli_prepare($conn, $updateProfilePictureSQL);
-        mysqli_stmt_bind_param($stmt, 'si', $fileName, $loggedInUserId); // Store only the file name, not the entire path
+        mysqli_stmt_bind_param($stmt, 'si', $fileName, $loggedInUserId); 
         mysqli_stmt_execute($stmt);
         $successMessage = "Profile picture updated successfully.";
     } else {
         // Handle error if the file wasn't moved successfully
-        // This could be due to permissions, incorrect paths, or other server settings
+
         echo "There was an error uploading the file.";
     }
 }
@@ -130,7 +128,7 @@ mysqli_close($conn);
     <meta http-equiv="refresh" content="800">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
-    <!-- Add your CSS styles and JavaScript libraries here -->
+   
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -232,7 +230,7 @@ mysqli_close($conn);
 <?php if (!empty($errorMessage)): ?>
     <div style="color: red;"><?php echo htmlspecialchars($errorMessage); ?></div>
 <?php endif; ?>
-    <!-- Add a link to go back to the profile page -->
+   
     <a href="profile.php?uid=<?php echo htmlspecialchars($profileUserId); ?>">Back to Profile</a>
 </body>
 </html>
