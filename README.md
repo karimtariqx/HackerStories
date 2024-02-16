@@ -27,7 +27,7 @@ Open Your Terminal:
    sudo mysql -u root -p
    CREATE DATABASE hackers;
    CREATE USER 'karim'@'localhost' IDENTIFIED BY '1234';
-   GRANT ALL PRIVILEGES ON challenges.* TO 'karim'@'localhost';
+   GRANT ALL PRIVILEGES ON hackers.* TO 'karim'@'localhost';
    EXIT;
    
 4.**Import the SQL file into the database:**
