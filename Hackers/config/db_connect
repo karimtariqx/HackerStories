@@ -11,6 +11,6 @@ if( !$conn ) {
 
 
 
-
+mysqli_report(MYSQLI_REPORT_OFF);
 
 ?>
