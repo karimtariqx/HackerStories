@@ -34,7 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         else
         {
-              $sql = "INSERT INTO `users` (username, password) VALUES ('$username', '$password')";
+              $sql = "INSERT INTO `users` (username, password, profile_picture) VALUES ('$username', '$password', '')";
+
               $result = mysqli_query($conn, $sql);
               if ($result) {
                     // echo "Signup successfull";
