@@ -52,6 +52,7 @@ Open Your Terminal:
 **Usage**
 
 After completing the installation, you can access the vulnerable web application by navigating to http://localhost/Hackers/ in your web browser.
+Also make sure to be connected to the internet at first when launching the app to load the css files from materialize
 
 
 **Disclaimer**
