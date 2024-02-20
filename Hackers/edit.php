@@ -6,7 +6,7 @@ $successMessage = "";
 $errorMessage = "";
 
 function generateCSRFToken() {
-    return bin2hex(random_bytes(32)); /
+    return bin2hex(random_bytes(32)); 
 }
 
 // Check if the user is logged in
