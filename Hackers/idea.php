@@ -5,7 +5,7 @@ session_start();
 
 
 
-
+// Initialize errors and form variables
 
 
 // Handle the URL input and fetch data if 'url' parameter is set
@@ -77,7 +77,7 @@ if(isset($_GET['url'])) {
 <body>
     <div class="navbar">
         <a href="index.php">Hacker Stories</a>
-        
+        <!-- Add other navigation items here if needed -->
     </div>
 
     <div class="main">
@@ -90,7 +90,8 @@ if(isset($_GET['url'])) {
         <?php
         if(isset($_GET['url'])) {
             $url = $_GET['url'];
-            
+            // Fetching data from the provided URL without validation, leading to SSRF vulnerability
+            // Be sure to use appropriate error handling in production code
             $dataFetched = @file_get_contents($url);
             if($dataFetched !== false) {
                 echo '<div><strong>Fetched Data:</strong></div>';
