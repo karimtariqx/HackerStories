@@ -82,7 +82,7 @@ if(isset($_GET['url'])) {
 
     <div class="main">
         <h2>Get Idea</h2>
-        <form action="ssrf_vulnerable.php" method="GET">
+        <form action="idea.php" method="GET">
             <label for="url">Enter URL to fetch data from:</label>
             <input type="text" id="url" name="url" placeholder="http://example.com">
             <button type="submit">Fetch Data</button>
